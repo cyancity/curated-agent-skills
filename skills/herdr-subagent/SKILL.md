@@ -7,6 +7,12 @@ description: "使用 Herdr 将独立任务交给其他 CLI agent；适用于跨 
 
 Herdr 可在独立 pane 中启动其他 CLI agent。Leader 负责切分任务、观察进度和复核结果。Herdr 命令、支持的 agent 和参数可能变化；每次先读取当前版本的 `herdr --skill` 与 `herdr agent start --help`。
 
+## 前置依赖
+
+- Herdr CLI 是本技能的前置依赖。开始委派前先运行 `herdr --version`，确认命令可用。
+- 如果命令不存在，先停止使用本技能并告知用户需要安装、配置 Herdr。提供 [Herdr 官方首次设置与使用指南](https://herdr.dev/agent-guide.md)，由用户或其 Agent 完成设置；不要代替用户安装。设置完成后重新打开终端并确认 `herdr --version` 可用，再继续。
+- Herdr 可用后，每次委派前读取 `herdr --skill` 与 `herdr agent start --help`，按当前版本使用。
+
 ## 判断是否委派
 
 - 小改动、单文件任务和短问答由当前 agent 直接完成。

@@ -22,14 +22,14 @@
     {
       "name": "herdr-subagent",
       "path": "skills/herdr-subagent/SKILL.md",
-      "description": "使用 Herdr 将独立任务交给其他 CLI agent；适用于跨 CLI、隔离工作树或长任务。先读取 Herdr 当前帮助并按最小权限执行。",
+      "description": "使用 Herdr 将独立任务交给其他 CLI agent；Herdr CLI 是前置依赖，委派前先确认已安装。",
       "category": "agent-orchestration",
       "triggers": [
         "需要跨 CLI 委派任务",
         "任务适合隔离工作树或长时间异步执行"
       ],
       "requires": [
-        "Herdr CLI",
+        "Herdr CLI installed and available on PATH",
         "At least one supported agent CLI"
       ],
       "references": [],
