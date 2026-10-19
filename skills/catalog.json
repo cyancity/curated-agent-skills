@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "dycopy",
+      "path": "skills/dycopy/SKILL.md",
+      "description": "下载和归档用户有权处理的抖音作品，提取文案、元数据与口播逐字稿，支持多个作品和主页的图文、视频、Live Photo 增量归档。",
+      "category": "media-archiving",
+      "triggers": [
+        "用户要求下载或分析抖音作品",
+        "用户要求批量归档抖音主页"
+      ],
+      "requires": [
+        "DyCopy application source",
+        "Python 3.10 or newer"
+      ],
+      "references": [
+        "skills/dycopy/references/troubleshooting.md"
+      ],
+      "source": "https://github.com/cyancity/dycopy-public"
+    },
+    {
+      "name": "herdr-subagent",
+      "path": "skills/herdr-subagent/SKILL.md",
+      "description": "使用 Herdr 将独立任务交给其他 CLI agent；适用于跨 CLI、隔离工作树或长任务。先读取 Herdr 当前帮助并按最小权限执行。",
+      "category": "agent-orchestration",
+      "triggers": [
+        "需要跨 CLI 委派任务",
+        "任务适合隔离工作树或长时间异步执行"
+      ],
+      "requires": [
+        "Herdr CLI",
+        "At least one supported agent CLI"
+      ],
+      "references": [],
+      "source": "curated"
+    }
+  ]
+}
