@@ -64,7 +64,7 @@ DyCopy 是非官方工具，与抖音及其运营方没有隶属、合作或背�
 
 ## 添加技能
 
-新技能应放在 skills/<name>/，并包含带 name 与 description 的 YAML frontmatter。把目录加入 skills/catalog.json，确保路径、触发条件和依赖准确。
+新技能应放在 `skills/<name>/`，并包含带 `name` 与 `description` 的 YAML frontmatter。把目录加入 `skills/catalog.json`，确保路径、触发条件和依赖准确。
 
 公开前检查所有新增文件。删除个人路径、账号、内部服务地址、凭据、真实用户数据和未批准的工作流。保持引用文件在 skill 目录内，避免依赖私人仓库。
 
