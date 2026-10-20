@@ -1,9 +1,11 @@
 ---
 name: herdr-subagent
-description: "使用 Herdr 将独立任务交给其他 CLI agent；适用于跨 CLI、隔离工作树或长任务。先读取 Herdr 当前帮助并按最小权限执行。"
+description: "包工头 skill：使用 Herdr 将独立任务派给其他 CLI agent，leader 盯进度并逐个验收结果；适用于跨 CLI、隔离工作树或长任务。用户口中的“包工头”就是它。先读取 Herdr 当前帮助并按最小权限执行。"
 ---
 
-# Herdr Subagent
+# Herdr Subagent（包工头）
+
+用户把它叫作“包工头”：一个 leader 像包工头一样派活、盯工、验收，而不是自己动手干完所有活。
 
 Herdr 可在独立 pane 中启动其他 CLI agent。Leader 负责切分任务、观察进度和复核结果。Herdr 命令、支持的 agent 和参数可能变化；每次先读取当前版本的 `herdr --skill` 与 `herdr agent start --help`。
 

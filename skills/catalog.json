@@ -22,9 +22,11 @@
     {
       "name": "herdr-subagent",
       "path": "skills/herdr-subagent/SKILL.md",
-      "description": "使用 Herdr 将独立任务交给其他 CLI agent；Herdr CLI 是前置依赖，委派前先确认已安装。",
+      "description": "包工头 skill：使用 Herdr 将独立任务交给其他 CLI agent，leader 盯进度并逐个验收结果；Herdr CLI 是前置依赖，委派前先确认已安装。",
+      "aliases": ["包工头", "包工头 skill", "foreman"],
       "category": "agent-orchestration",
       "triggers": [
+        "用户提到“包工头”skill",
         "需要跨 CLI 委派任务",
         "任务适合隔离工作树或长时间异步执行"
       ],

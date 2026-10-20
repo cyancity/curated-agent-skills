@@ -2,13 +2,16 @@
 
 一份持续扩充的 agent skill 集合。每个条目都经过人工审阅和脱敏，目录、元数据和安装边界都为 agent 读取而整理。
 
+> **找“包工头”skill？** 就是 [herdr-subagent](skills/herdr-subagent/SKILL.md)：让当前 agent 当包工头，把独立任务派给其他 CLI agent，再逐个验收结果。别名的来源见 [包工头是什么](#包工头是什么)。
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/skills-dark.svg">
-  <img src="docs/images/skills-light.svg" width="960" alt="两个已审阅技能：dycopy 用于媒体归档，herdr-subagent 用于 agent 协作">
+  <img src="docs/images/skills-light.svg" width="960" alt="两个已审阅技能：dycopy 用于媒体归档，包工头（herdr-subagent）用于 agent 协作">
 </picture>
 
 <p>
   <a href="https://github.com/cyancity/curated-agent-skills"><img src="https://img.shields.io/badge/skills-2-4263eb" alt="2 skills"></a>
+  <a href="skills/herdr-subagent/SKILL.md"><img src="https://img.shields.io/badge/%E5%8C%85%E5%B7%A5%E5%A4%B4-herdr--subagent-0b7285" alt="包工头 = herdr-subagent"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2f9e44" alt="MIT license"></a>
 </p>
 
@@ -17,9 +20,17 @@
 | Skill | 适用任务 | 入口 |
 |---|---|---|
 | [dycopy](skills/dycopy/SKILL.md) | 下载或归档用户有权处理的抖音作品，提取文案、元数据和逐字稿 | [Skill](skills/dycopy/SKILL.md) · [故障定位](skills/dycopy/references/troubleshooting.md) |
-| [herdr-subagent](skills/herdr-subagent/SKILL.md) | 通过 Herdr 把独立任务交给其他 CLI agent，并复核其结果 | [Skill](skills/herdr-subagent/SKILL.md) |
+| [herdr-subagent](skills/herdr-subagent/SKILL.md) **（包工头）** | 当包工头：把独立任务派给其他 CLI agent，盯进度，验收交付物 | [Skill](skills/herdr-subagent/SKILL.md) |
 
 机器可读目录在 [skills/catalog.json](skills/catalog.json)。Agent 入口约定在 [AGENTS.md](AGENTS.md)。
+
+## 包工头是什么
+
+“包工头”是 herdr-subagent 的口语别名，指这个 skill 的工作方式：一个 leader 派活给多个 worker agent，worker 报“完成”不算数，leader 要读 diff、重跑检查、逐项对照原始需求。
+
+- 想找的就是它：[skills/herdr-subagent/SKILL.md](skills/herdr-subagent/SKILL.md)
+- 适用：跨 CLI 委派、独立审查、隔离工作树、长时间异步任务
+- 先决：`herdr` CLI 加至少一个支持的 agent CLI
 
 ## 安装单个 skill
 
